@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuickNotes</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>QuickNotes</h1>
+      <p>Capture ideas before they disappear.</p>
+    </header>
+
+    <main>
+      <section aria-labelledby="add-heading">
+        <h2 id="add-heading">Add a note</h2>
+        <form id="note-form" novalidate>
+          <div class="field field-grow">
+            <label for="note-input">New note</label>
+            <input
+              type="text"
+              id="note-input"
+              placeholder="What do you want to remember?"
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="field">
+            <label for="category-select">Category</label>
+            <select id="category-select">
+              <option value="personal">Personal</option>
+              <option value="work">Work</option>
+              <option value="study">Study</option>
+            </select>
+          </div>
+
+          <button type="submit" id="add-btn">Add Note</button>
+        </form>
+        <p id="form-message" role="alert"></p>
+      </section>
+
+      <section aria-labelledby="notes-heading">
+        <h2 id="notes-heading">Your notes</h2>
+
+        <div class="toolbar">
+          <div class="field field-grow">
+            <label for="search-input">Search notes</label>
+            <input
+              type="search"
+              id="search-input"
+              placeholder="Type to search..."
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="field">
+            <label for="filter-select">Show</label>
+            <select id="filter-select">
+              <option value="all">All categories</option>
+              <option value="personal">Personal</option>
+              <option value="work">Work</option>
+              <option value="study">Study</option>
+            </select>
+          </div>
+        </div>
+
+        <p id="note-count">You have no notes yet.</p>
+        <p id="summary"></p>
+
+        <ul id="notes-list"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 QuickNotes. Built during Web Foundations.</p>
+    </footer>
+  </body>
+</html>

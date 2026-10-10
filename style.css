@@ -1,0 +1,255 @@
+/* ---------- Reset and base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --text: #222222;
+  --muted: #5a626b;
+  --border: #cfd5db;
+  --brand: #8e0000;
+  --brand-dark: #6b0000;
+  --accent: #0ba184;
+  --accent-dark: #088a70;
+  --personal: #0ba184;
+  --work: #d35400;
+  --study: #2b6cb0;
+  --error: #c0392b;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ---------- Header and footer ---------- */
+header {
+  background-color: var(--brand);
+  color: white;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+header h1 {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+header p {
+  margin: 4px 0 0;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 16px;
+}
+
+/* ---------- Layout ---------- */
+main {
+  max-width: 720px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+section {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+  margin-top: 0;
+  color: var(--brand);
+}
+
+/* ---------- Forms ---------- */
+#note-form,
+.toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-grow {
+  flex: 1;
+  min-width: 180px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+input,
+select {
+  font: inherit;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: white;
+  color: var(--text);
+}
+
+input:focus,
+select:focus,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+#form-message {
+  min-height: 1.5em;
+  margin: 10px 0 0;
+  color: var(--error);
+  font-weight: bold;
+}
+
+#note-count {
+  margin: 16px 0 0;
+  font-weight: bold;
+}
+
+#summary {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+/* ---------- Notes list ---------- */
+#notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.note {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background-color: #fffbe6;
+  border-left: 6px solid var(--border);
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.note-personal {
+  border-left-color: var(--personal);
+}
+
+.note-work {
+  border-left-color: var(--work);
+}
+
+.note-study {
+  border-left-color: var(--study);
+}
+
+.note-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.note-text {
+  overflow-wrap: anywhere;
+}
+
+.note-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.badge {
+  color: white;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-personal {
+  background-color: var(--personal);
+}
+
+.badge-work {
+  background-color: var(--work);
+}
+
+.badge-study {
+  background-color: var(--study);
+}
+
+.delete-btn {
+  background-color: var(--brand);
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.delete-btn:hover {
+  background-color: var(--brand-dark);
+}
+
+.empty {
+  color: var(--muted);
+  font-style: italic;
+  padding: 12px 0;
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  #note-form,
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .note {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
