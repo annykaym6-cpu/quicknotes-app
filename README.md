@@ -56,3 +56,6 @@ types is shown as plain text.
 ## Built with
 
 HTML, CSS and JavaScript (no frameworks), as part of the Web Foundations course.
+
+## Author
+Built by Kay for the Web Foundations course.
