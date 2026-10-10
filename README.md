@@ -59,3 +59,6 @@ HTML, CSS and JavaScript (no frameworks), as part of the Web Foundations course.
 
 ## Author
 Built by Kay for the Web Foundations course.
+
+## Future ideas
+- Edit an existing note, and add more categories
