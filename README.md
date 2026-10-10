@@ -62,3 +62,6 @@ Built by Kay for the Web Foundations course.
 
 ## Future ideas
 - Edit an existing note, and add more categories
+
+## Tech notes
+Data is stored in the browser with localStorage under the key quicknotes.
